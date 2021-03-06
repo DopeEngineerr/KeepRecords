@@ -1,23 +1,52 @@
-import logo from './logo.svg';
+import { useState } from 'react';
 import './App.css';
+import Footer from './Footer';
+import Input2 from './Input2';
+import Navbar from "./Navbar";
+import Tasks from './Tasks';
 
-function App() {
+
+const App = () => {
+
+  const [AddItem, setAddItem] = useState([]);
+
+  const AddNote = (Note) => {
+    setAddItem((prevData) => {
+      return [...prevData, Note];
+    });
+  };
+
+  const onDelete = (id) => {
+    setAddItem((oldData) =>
+      oldData.filter((currData, indx) => {
+        return indx !== id;
+      })
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="project">
+      <div className="top">
+        <Navbar />
+        <Input2 passNote={AddNote} />
+
+
+        <div className="row">
+          {AddItem.map((val, index) => {
+            return (
+              <Tasks
+                key={index}
+                id={index}
+                title={val.title}
+                content={val.content}
+                deleteItem={onDelete}
+              />
+            );
+          })}
+        </div>
+
+        <Footer />
+      </div>
     </div>
   );
 }

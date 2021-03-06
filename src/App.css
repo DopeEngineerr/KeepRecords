@@ -1,38 +1,105 @@
-.App {
-  text-align: center;
+/* 
+import './App.css'; 
+*/
+
+#myRec{
+  font-size: 35px;
+  font-weight:500;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* FOOTER */
+
+#MyFoot{
+  position: relative;
+  margin-top: 430px;
+  /* negative value of footer height */
+  height: 0px;
+  clear: both;
+  background-color: rgb(255, 255, 255);
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+
+#foot{
+  font-weight: bold;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#xd{
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+#input{
+  padding: 30px;
+  padding-top: 10px;
+  margin-top: 40px;
+  padding-bottom: 5px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+#title{
+  font-size: 25px;
+  font-weight: 500;
 }
+
+
+#content{
+  font-size: 17px;
+}
+
+@media screen and (max-width:812px){
+  #input{
+  padding: 10px;
+  padding-top: 10px;
+  margin-top: 20px;
+  padding-bottom: 5px;
+  
+  }
+  /* #title{
+  font-size: 20px;
+  }
+
+
+  #content{
+  font-size: 15px;
+  } */
+
+  #myRec{
+  font-size: 35px;
+  font-weight:500;
+  
+  margin-left: 35px;
+}
+}
+
+.input-field input:focus + label {
+   color: #3F51B5 !important;
+}
+
+.row .input-field input:focus {
+   border-bottom: 1px solid #3F51B5 !important;
+   box-shadow: 0 1px 0 0 #3F51B5 !important
+}
+
+
+.input-field textarea:focus + label {
+   color: #3F51B5 !important;
+}
+
+.row .input-field textarea:focus {
+   border-bottom: 1px solid #3F51B5 !important;
+   box-shadow: 0 1px 0 0 #3F51B5 !important
+}
+ 
+
+/* APP */
+
+#myTitle{
+  font-weight: 500;
+  font-size: 25px;
+}
+
+#myContent{
+  font-size: 17px;
+  
+}
+
